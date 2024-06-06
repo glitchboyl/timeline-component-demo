@@ -38,7 +38,7 @@ const Ruler = () => {
             key={i}
             style={{
               height: i % 10 === 0 ? 16 : 4,
-              left: 56 + i * 20,
+              left: 56 + 6 + i * 20,
             }}
             className="w-[1px] top-[4px] absolute bg-border/10"
           ></div>
