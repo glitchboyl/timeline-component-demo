@@ -1,4 +1,5 @@
 import useClips from "../hooks/useClips";
+import ClipBlock from "./ClipBlock";
 
 const WorkbenchPanel = () => {
   const { clips, addClip } = useClips();
@@ -15,13 +16,7 @@ const WorkbenchPanel = () => {
       </div>
       <div className="flex flex-wrap justify-between">
         {clips.map((clip) => (
-          <div
-            className="w-[120px] h-[60px] rounded-[8px] mb-[8px]"
-            style={{
-              backgroundColor: clip.color,
-            }}
-            key={clip.id}
-          ></div>
+          <ClipBlock id={clip.id} color={clip.color} key={clip.id} />
         ))}
       </div>
     </div>

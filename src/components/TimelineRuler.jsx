@@ -31,7 +31,7 @@ const TimelineRuler = () => {
       className="border-t-[1px] border-solid border-t-border/10 relative"
       ref={rulerRef}
     >
-      {Array(Math.ceil(rulerWidth / 20))
+      {Array(Math.floor(rulerWidth / 20))
         .fill(null)
         .map((_, i) => (
           <div

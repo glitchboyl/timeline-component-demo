@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { atom, useAtom } from "jotai";
 import { v4 as uuidv4 } from "uuid";
 
 const generateRandomColor = () => {
@@ -12,8 +12,10 @@ const generateRandomColor = () => {
   return hexColor;
 };
 
+const clipsAtom = atom([]);
+
 const useClips = () => {
-  const [clips, setClips] = useState([]);
+  const [clips, setClips] = useAtom(clipsAtom);
 
   const addClip = () => {
     setClips((_clips) => [
@@ -25,17 +27,17 @@ const useClips = () => {
     ]);
   };
 
-  const removeClip = (clipId) => {
-    const removedClipIndex = clips.findIndex((clip) => clip.id === clipId);
-    if (removedClipIndex !== -1) {
-      setClips((_clips) => _clips.filter((_, i) => i !== removedClipIndex));
-    }
-  };
+  // const removeClip = (clipId) => {
+  //   const removedClipIndex = clips.findIndex((clip) => clip.id === clipId);
+  //   if (removedClipIndex !== -1) {
+  //     setClips((_clips) => _clips.filter((_, i) => i !== removedClipIndex));
+  //   }
+  // };
 
   return {
     clips,
     addClip,
-    removeClip,
+    // removeClip,
   };
 };
 

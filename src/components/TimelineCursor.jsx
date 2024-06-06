@@ -38,7 +38,7 @@ const TimelineCursor = () => {
 
   return (
     <div
-      className="w-[12px] h-full left-[56px] top-[48px] absolute"
+      className="w-[12px] h-full left-[56px] top-[48px] z-[999] absolute"
       style={{
         transform: `translateX(${deltaX}px)`,
       }}
