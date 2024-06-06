@@ -1,11 +1,11 @@
-import Ruler from "./Ruler";
-import Cursor from "./Cursor";
+import TimelineRuler from "./TimelineRuler";
+import TimelineCursor from "./TimelineCursor";
 
 const TimelinePanel = () => {
   return (
     <div className="flex-grow pt-[48px] relative">
-      <Ruler />
-      <Cursor />
+      <TimelineRuler />
+      <TimelineCursor />
     </div>
   );
 };

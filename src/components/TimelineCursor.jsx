@@ -1,6 +1,6 @@
 import { useState, useRef, useEffect } from "react";
 
-const Cursor = () => {
+const TimelineCursor = () => {
   const [active, setActive] = useState(false);
   const [deltaX, setDeltaX] = useState(0);
   const cursorRef = useRef(null);
@@ -45,6 +45,7 @@ const Cursor = () => {
       onMouseDown={handleMouseDown}
       ref={cursorRef}
     >
+      {/* copy from Capcut */}
       <svg
         className="cursor-hd-icon-Zy1flR"
         width="12"
@@ -67,9 +68,10 @@ const Cursor = () => {
           mask="url(#path-1-inside-1_1578_341598)"
         ></path>
       </svg>
+      {/* copy from Capcut */}
       <div className="w-[2px] h-full left-[5px] top-[16px] bg-primary absolute"></div>
     </div>
   );
 };
 
-export default Cursor;
+export default TimelineCursor;

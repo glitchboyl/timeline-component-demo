@@ -1,7 +1,7 @@
 import { useState, useRef, useEffect } from "react";
 import { debounce } from "lodash-es";
 
-const Ruler = () => {
+const TimelineRuler = () => {
   const [rulerWidth, setRulerWidth] = useState(0);
   const rulerRef = useRef(null);
 
@@ -47,4 +47,4 @@ const Ruler = () => {
   );
 };
 
-export default Ruler;
+export default TimelineRuler;
