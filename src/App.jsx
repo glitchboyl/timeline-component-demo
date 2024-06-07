@@ -51,7 +51,13 @@ const App = () => {
   const { clips } = useClips();
   const [activeClip, setActiveClip] = useState(null);
   const { adjust } = useTracks();
-  const sensors = useSensors(useSensor(PointerSensor));
+  const sensors = useSensors(
+    useSensor(PointerSensor, {
+      activationConstraint: {
+        tolerance: 5,
+      },
+    })
+  );
 
   const overTrackId = useRef(null);
 
@@ -145,7 +151,7 @@ const App = () => {
               trackId: overTrackId.current,
             });
           } else if (over.data.current.gap) {
-            overTrackId.current = over.id;
+            // overTrackId.current = over.id;
           }
         }
       } else {
@@ -281,7 +287,7 @@ const App = () => {
                 id: activeClip.id,
                 color: activeClip.color,
                 start,
-                end: start + 100,
+                end: start + activeClip.end - activeClip.start,
               },
             });
           } else {
