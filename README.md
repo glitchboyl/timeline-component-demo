@@ -39,3 +39,5 @@ You should see the application running at [http://localhost:5173](http://localho
 When you start the application, you should see there is a add clip button in the left side panel.
 
 when you have click it, it will increase a clip block that can drag into the timeline panel.
+
+All the clip blocks are draggable, and the timeline panel area is droppable.
